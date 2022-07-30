@@ -63,7 +63,7 @@ export class CdkStarterStack extends cdk.Stack {
       machineImage: new ec2.AmazonLinuxImage({
         generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2,
       }),
-      keyName: 'ec2-key-pair',
+      keyName: 'think1',
     });
 
     // 👇 load contents of script
