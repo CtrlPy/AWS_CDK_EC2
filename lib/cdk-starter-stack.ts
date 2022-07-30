@@ -44,7 +44,7 @@ export class CdkStarterStack extends cdk.Stack {
     const webserverRole = new iam.Role(this, 'webserver-role', {
       assumedBy: new iam.ServicePrincipal('ec2.amazonaws.com'),
       managedPolicies: [
-        iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonS3ReadOnlyAccess'),
+        iam.ManagedPolicy.fromAwsManagedPolicyName('AmazonSSMManagedInstanceCore'),
       ],
     });
 
@@ -63,7 +63,7 @@ export class CdkStarterStack extends cdk.Stack {
       machineImage: new ec2.AmazonLinuxImage({
         generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2,
       }),
-      keyName: 'think1',
+      // keyName: 'you-kay-name',
     });
 
     // 👇 load contents of script
